@@ -1,4 +1,4 @@
-package com.montasirmoyen.entity;
+package com.montasirmoyen.universal_room_booker.entity;
 import java.util.List;
 
 import jakarta.persistence.*;
