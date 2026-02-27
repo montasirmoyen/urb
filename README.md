@@ -6,13 +6,26 @@ What it is: A backend system for managing room reservations. You can create room
 
 ## Prerequisites
 
-- Java 21 or higher
-- Maven 3.6+
-- PostgreSQL 12+
+- Docker and Docker Compose (for Option 1), OR
+- Java 21 or higher (for Option 2)
+- Maven 3.6+ (for Option 2)
+- PostgreSQL 12+ (for Option 2)
 
 ## Setup
+ 
+### Option 1: Using Docker (Recommended)
 
-### 1. Database Setup
+The easiest way to get started. Make sure you have Docker and Docker Compose installed.
+
+```bash
+docker-compose up
+```
+
+This will start PostgreSQL and the application. The server will be available at `http://localhost:8080`
+
+### Option 2: Manual Setup
+
+#### 1. Database Setup
 
 Create a PostgreSQL database for the application:
 
@@ -20,7 +33,7 @@ Create a PostgreSQL database for the application:
 CREATE DATABASE urb_db;
 ```
 
-### 2. Configure Environment
+#### 2. Configure Environment
 
 Set the database password (DB_PASSWORD) as an environment variable:
 
@@ -38,13 +51,19 @@ spring:
     password: your_password
 ```
 
-### 3. Build the Project
+#### 3. Build the Project
 
 ```bash
 mvn clean install
 ```
 
 ## Running the Application
+
+**If using Docker (Option 1):**
+
+The application starts automatically when you run `docker-compose up`. Skip to API Endpoints below.
+
+**If using Manual Setup (Option 2):**
 
 Start the application with:
 
