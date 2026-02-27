@@ -40,6 +40,9 @@ public class Booking {
     @Column(nullable = false)
     private String bookedBy;
 
+    @Version
+    private Long version; // for optimistic locking, preventing race condtions
+
     // tracks when the booking was created, in case needed
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
